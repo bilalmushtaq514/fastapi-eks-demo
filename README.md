@@ -80,22 +80,15 @@ The script:
 
 ### 2. Configure GitHub repo
 
-In `Settings -> Secrets and variables -> Actions`, add:
-
-**Secrets**
+In `Settings -> Secrets and variables -> Actions -> Secrets`, add:
 
 | Name | Source |
 |---|---|
 | `AWS_ROLE_ARN` | `terraform output -raw github_actions_role_arn` |
-| `API_KEY` | Any string. Will be injected into the app via Secret. |
-
-**Variables**
-
-| Name | Source |
-|---|---|
 | `AWS_REGION` | `us-east-1` (or `terraform output -raw region`) |
 | `ECR_REPOSITORY` | `terraform output -raw ecr_repository_url` |
 | `EKS_CLUSTER_NAME` | `terraform output -raw cluster_name` |
+| `API_KEY` | Any string. Will be injected into the app via Secret. |
 
 ### 3. Push to `main`
 

@@ -10,9 +10,9 @@ permissions:
   contents: read
 
 env:
-  AWS_REGION: ${{ vars.AWS_REGION }}
-  ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}     # full ECR URL, e.g. 1234.dkr.ecr.us-east-1.amazonaws.com/microservice-dev
-  EKS_CLUSTER_NAME: ${{ vars.EKS_CLUSTER_NAME }}
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+  ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}     # full ECR URL, e.g. 1234.dkr.ecr.us-east-1.amazonaws.com/microservice-dev
+  EKS_CLUSTER_NAME: ${{ secrets.EKS_CLUSTER_NAME }}
   IMAGE_TAG: ${{ github.sha }}
 
 jobs:
