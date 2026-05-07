@@ -61,11 +61,7 @@ flowchart LR
 ### 1. Provision infrastructure
 
 ```bash
-# Edit GitHub identifiers in terraform.tfvars (already done for this demo):
-# github_owner = "bilalmushtaq514"
-# github_repo  = "fastapi-eks-demo"
 
-export AWS_PROFILE=bilal     # or omit to use default profile
 ./scripts/bootstrap.sh
 ```
 
@@ -110,7 +106,6 @@ This triggers the `ci-cd` workflow, which:
 ## Verifying the deployment
 
 ```bash
-export AWS_PROFILE=bilal
 aws eks update-kubeconfig --name microservice-dev --region us-east-1
 
 kubectl get pods -l app=microservice -o wide   # expect 2/2 Running
@@ -141,18 +136,11 @@ docker run --rm -p 8000:8000 \
 curl localhost:8000/health
 ```
 
-## Debugging
-
-See [BREAK_ME.md](BREAK_ME.md) for three intentional failure scenarios
-(`ImagePullBackOff`, `CrashLoopBackOff`, `CreateContainerConfigError`)
-with diagnosis steps and a general debugging cheat-sheet.
-
 ## Tear down
 
 EKS dev runs ~$75/month idle. To stop the bill:
 
 ```bash
-export AWS_PROFILE=bilal
 cd terraform/envs/dev
 terraform destroy
 
