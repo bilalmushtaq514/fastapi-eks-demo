@@ -52,7 +52,7 @@ flowchart LR
 - AWS account with admin credentials
 - `terraform` >= 1.5
 - `aws` CLI v2
-- `kubectl` >= 1.30
+- `kubectl` >= 1.34
 - `docker` (for local build/test)
 - A GitHub repository (push this code there once provisioned)
 

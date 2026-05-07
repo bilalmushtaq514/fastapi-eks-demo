@@ -90,7 +90,7 @@ jobs:
       - name: Install kubectl
         uses: azure/setup-kubectl@v4
         with:
-          version: v1.30.0
+          version: v1.34.0
 
       - name: Update kubeconfig
         run: |
