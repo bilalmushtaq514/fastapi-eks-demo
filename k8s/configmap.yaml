@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: microservice-config
+  namespace: default
+  labels:
+    app: microservice
+data:
+  APP_ENV: "dev"
+  LOG_LEVEL: "info"

@@ -1,0 +1,16 @@
+region              = "us-east-1"
+project             = "microservice"
+environment         = "dev"
+kubernetes_version  = "1.30"
+node_instance_types = ["t3.medium"]
+node_desired_size   = 2
+
+# REQUIRED: replace with your GitHub org/user and repo
+github_owner = "your-github-org"
+github_repo  = "your-repo-name"
+
+# Allowed GitHub Actions ref patterns
+github_ref_patterns = ["ref:refs/heads/main"]
+
+# Set to false if a GitHub OIDC provider already exists in this AWS account
+create_github_oidc_provider = true
